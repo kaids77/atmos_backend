@@ -29,7 +29,9 @@ def init_firebase():
                 return
 
         try:
-            firebase_admin.initialize_app(cred)
+            firebase_admin.initialize_app(cred, {
+                'storageBucket': 'atmos-6f7c6.appspot.com'
+            })
             db = firestore.client()
             print("Firebase Admin SDK initialized successfully.")
         except Exception as e:
